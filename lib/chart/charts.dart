@@ -50,6 +50,7 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth=MediaQuery.of(context).size.width;
     final gradients = Theme.of(context).extension<AppGradients>()!;
     final isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Container(
@@ -68,7 +69,7 @@ class Chart extends StatelessWidget {
         children: [
           Text(
             "Total Expense: ₹ ${totalExpenses.toStringAsFixed(1)}",
-            style:GoogleFonts.poppins(fontSize: 18,fontWeight: FontWeight.bold,color: Theme.of(context).canvasColor),
+            style:GoogleFonts.poppins(fontSize: (screenWidth * 0.046).roundToDouble().clamp(16, 24),fontWeight: FontWeight.bold,color: Theme.of(context).canvasColor),
           ),
           const SizedBox(height: 12),
           Expanded(

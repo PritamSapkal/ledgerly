@@ -49,6 +49,8 @@ class _HomepgaeState extends State<Homepgae> {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screnWidth= MediaQuery.of(context).size.width;
     final width = MediaQuery.of(context).size.width;
     final heigth=MediaQuery.of(context).size.height;
     Widget maincontext= Padding(
@@ -56,14 +58,18 @@ class _HomepgaeState extends State<Homepgae> {
       child: Center(child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset("lib/images/rabit-removebg-preview.png",scale: 2.5,),
-          Text('No expense Found start Adding some..!',style: Theme.of(context).textTheme.headlineSmall!.copyWith(fontSize: 15),),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,15,0,5),
+            child: Image.asset("lib/images/rabit-removebg-preview.png", height: screenHeight * 0.20, fit: BoxFit.contain,),
+          ),
+
+          Text('No expense Found start Adding some..!',style: Theme.of(context).textTheme.headlineSmall!.copyWith(fontSize: (screnWidth * 0.038).roundToDouble().clamp(14, 20)),),
         ],
       )),
     );
     if(_registredexpenses.isNotEmpty){
 
-        maincontext = Expense_List(expenseslist: _registredexpenses, removeExpense: removeExpense,);
+        maincontext = Expanded(child: Container(child: Expense_List(expenseslist: _registredexpenses, removeExpense: removeExpense,)));
     }
     return Scaffold(
 
@@ -114,16 +120,12 @@ class _HomepgaeState extends State<Homepgae> {
         width:  width,
         color: Theme.of(context).primaryColor,
         child: Column(
-          mainAxisAlignment: _registredexpenses.isNotEmpty?MainAxisAlignment.start:MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,//_registredexpenses.isNotEmpty?MainAxisAlignment.start:MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Chart(expenses: _registredexpenses),
             const SizedBox(height: 10,),
-            Expanded(
-             child: Container(
-             child: maincontext,
-                      ),
-           )
+            maincontext
           ],
         ),
       ),
@@ -143,7 +145,7 @@ class _HomepgaeState extends State<Homepgae> {
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        height:70,
+        height: (screenHeight * 0.083).clamp(60.0, 90.0),
         shape: CircularNotchedRectangle(),
         notchMargin: 8.0,
         child: Row(

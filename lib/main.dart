@@ -37,8 +37,8 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-
-    return MaterialApp(debugShowCheckedModeBanner: false,
+     double screenWidth=MediaQuery.of(context).size.width;
+       return MaterialApp(debugShowCheckedModeBanner: false,
 
       theme:ThemeData.light().copyWith(
         primaryColor: Color(0xFFF8F9FB),
@@ -51,14 +51,14 @@ class _MyAppState extends State<MyApp> {
         textTheme: TextTheme(
           headlineLarge: GoogleFonts.openSans(
             color: Colors.black,
-            fontSize:35,
+            fontSize: (screenWidth * 0.09).clamp(30.0, 45.0),
             fontWeight: FontWeight.bold,
           ),
-          headlineMedium: GoogleFonts.openSans(color: Colors.black,fontSize:20,fontWeight: FontWeight.bold),
-          headlineSmall: GoogleFonts.openSans(color: Colors.grey,fontSize: 12),
-          titleLarge:GoogleFonts.openSans(color: Colors.black,fontSize: 17,fontWeight: FontWeight.w500) ,
-          titleMedium: GoogleFonts.openSans(color: Colors.orange.shade300, fontSize: 13) ,
-          titleSmall: GoogleFonts.openSans(color: Colors.green, fontSize: 15) ,
+          headlineMedium: GoogleFonts.openSans(color: Colors.black,fontSize: (screenWidth * 0.051).clamp(18, 26),fontWeight: FontWeight.bold),
+          headlineSmall: GoogleFonts.openSans(color: Colors.grey,fontSize: (screenWidth * 0.030).clamp(11, 16)),
+          titleLarge:GoogleFonts.openSans(color: Colors.black,fontSize: (screenWidth * 0.044).roundToDouble().clamp(15, 22),fontWeight: FontWeight.w500) ,
+          titleMedium: GoogleFonts.openSans(color: Colors.orange.shade300, fontSize: (screenWidth * 0.033).clamp(12, 18)) ,
+          titleSmall: GoogleFonts.openSans(color: Colors.green, fontSize: (screenWidth * 0.038).clamp(14, 20)) ,
         ),
 
         iconTheme: IconThemeData(color: Colors.black),
@@ -81,8 +81,8 @@ class _MyAppState extends State<MyApp> {
         dialogTheme: DialogThemeData(
           backgroundColor: Colors.white,
           elevation: 5,
-          titleTextStyle: GoogleFonts.poppins(color: Colors.black,fontSize: 25,fontWeight: FontWeight.w600),
-          contentTextStyle: GoogleFonts.poppins(color: Colors.black54,fontSize: 17,fontWeight: FontWeight.w400),
+          titleTextStyle: GoogleFonts.poppins(color: Colors.black,fontSize: (screenWidth * 0.064).roundToDouble().clamp(22, 32),fontWeight: FontWeight.w600),
+          contentTextStyle: GoogleFonts.poppins(color: Colors.black54,fontSize: (screenWidth * 0.044).roundToDouble().clamp(15, 22),fontWeight: FontWeight.w400),
         ),
         extensions: [
           AppGradients(
@@ -123,14 +123,14 @@ class _MyAppState extends State<MyApp> {
 
           headlineLarge: GoogleFonts.openSans(
             color: Colors.white,
-            fontSize:35,
+            fontSize:(screenWidth * 0.09).clamp(30.0, 45.0),
             fontWeight: FontWeight.bold,
           ),
-          headlineMedium: GoogleFonts.openSans(color: Colors.white,fontSize:20,fontWeight: FontWeight.bold),
-          headlineSmall: GoogleFonts.openSans(color: Colors.white70,fontSize: 12),
-          titleLarge:GoogleFonts.openSans(color: Colors.white,fontSize: 17,fontWeight: FontWeight.w500) ,
-          titleMedium: GoogleFonts.openSans(color: Colors.orange.shade300,fontSize: 13) ,
-          titleSmall: GoogleFonts.openSans(color: Colors.green, fontSize: 15) ,
+          headlineMedium: GoogleFonts.openSans(color: Colors.white,fontSize: (screenWidth * 0.051).roundToDouble().clamp(18, 26),fontWeight: FontWeight.bold),
+          headlineSmall: GoogleFonts.openSans(color: Colors.white70,fontSize: (screenWidth * 0.030).roundToDouble().clamp(11, 16)),
+          titleLarge:GoogleFonts.openSans(color: Colors.white,fontSize: (screenWidth * 0.044).roundToDouble().clamp(15, 22),fontWeight: FontWeight.w500) ,
+          titleMedium: GoogleFonts.openSans(color: Colors.orange.shade300,fontSize: (screenWidth * 0.033).roundToDouble().clamp(12, 18)) ,
+          titleSmall: GoogleFonts.openSans(color: Colors.green,fontSize: (screenWidth * 0.038).roundToDouble().clamp(14, 20)) ,
         ),
 
           iconTheme: IconThemeData(color: Colors.white),
@@ -149,8 +149,8 @@ class _MyAppState extends State<MyApp> {
           primaryColorLight: Colors.black,
 
           dialogTheme: DialogThemeData(
-          titleTextStyle: GoogleFonts.poppins(color: Colors.white,fontSize: 25,fontWeight: FontWeight.w600),
-          contentTextStyle: GoogleFonts.poppins(color: Colors.white70,fontSize: 17,fontWeight: FontWeight.w400),
+          titleTextStyle: GoogleFonts.poppins(color: Colors.white,fontSize: (screenWidth * 0.064).roundToDouble().clamp(22, 32),fontWeight: FontWeight.w600),
+          contentTextStyle: GoogleFonts.poppins(color: Colors.white70,fontSize: (screenWidth * 0.044).roundToDouble().clamp(15, 22),fontWeight: FontWeight.w400),
         ),
 
            canvasColor: Color(0xFFF8FAFC),
