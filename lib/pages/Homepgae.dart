@@ -15,7 +15,34 @@ class Homepgae extends StatefulWidget{
 
 class _HomepgaeState extends State<Homepgae> {
   final List<expense_model> _registredexpenses=[];
+  String? gretingtitle;
+  String? sub;
 
+  void gretingtitlefn() {
+    int hour = DateTime.now().hour;
+
+    if (hour >= 6 && hour < 12) {
+      gretingtitle = 'Good Morning, welcome back! \n';
+      sub = 'Track your expenses, start your day right';
+    }
+    else if (hour >= 12 && hour < 17) {
+      gretingtitle = 'Good Afternoon, welcome back!\n';
+      sub = 'Keep tracking your expenses throughout the day';
+    }
+    else if (hour >= 17 && hour < 19) {
+      gretingtitle = 'Good Evening, welcome back!\n';
+      sub = 'Review your spending and stay on track';
+    }
+    else {
+      gretingtitle = 'Welcome back!\n';
+      sub = 'Check your daily expenses and plan for tomorrow';
+    }
+  }
+  @override
+  void initState() {
+    super.initState();
+    gretingtitlefn();
+  }
   void addExpense(expense_model expense){
     setState(() {
       _registredexpenses.add(expense);
@@ -85,16 +112,16 @@ class _HomepgaeState extends State<Homepgae> {
             backgroundColor: Theme.of(context).primaryColor ,
           ),
         ),
-        title: RichText(text:TextSpan(
-          style: Theme.of(context).textTheme.headlineMedium,
-            children: [
-            TextSpan(text: "Welcome Back..!\n", ),
-            TextSpan(text: 'Track your expenses,start your day right',style: Theme.of(context).textTheme.headlineSmall)
-          ]
-        ) ),
+        title:Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('$gretingtitle',style: Theme.of(context).textTheme.headlineMedium,),
+            Text('$sub',style: Theme.of(context).textTheme.headlineSmall,),
+          ],
+        ),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.fromLTRB(0,8,8,8),
             child: IconButton(
               icon:  Theme.of(context).brightness == Brightness.dark ? Icon(Icons.light_mode_rounded):Icon(Icons.dark_mode_rounded,color: Colors.black,),
               onPressed: () {
