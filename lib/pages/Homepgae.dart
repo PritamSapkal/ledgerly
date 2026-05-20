@@ -22,15 +22,15 @@ class _HomepgaeState extends State<Homepgae> {
     int hour = DateTime.now().hour;
 
     if (hour >= 6 && hour < 12) {
-      gretingtitle = 'Good Morning, welcome back! \n';
-      sub = 'Track your expenses, start your day right';
+      gretingtitle = 'Good Morning.! \n';
+      sub = 'Track your expenses.!';
     }
     else if (hour >= 12 && hour < 17) {
-      gretingtitle = 'Good Afternoon, welcome back!\n';
+      gretingtitle = 'Good Afternoon.!\n';
       sub = 'Keep tracking your expenses throughout the day';
     }
     else if (hour >= 17 && hour < 19) {
-      gretingtitle = 'Good Evening, welcome back!\n';
+      gretingtitle = 'Good Evening.!\n';
       sub = 'Review your spending and stay on track';
     }
     else {
@@ -114,9 +114,31 @@ class _HomepgaeState extends State<Homepgae> {
         ),
         title:Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Text('$gretingtitle',style: Theme.of(context).textTheme.headlineMedium,),
-            Text('$sub',style: Theme.of(context).textTheme.headlineSmall,),
+            Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: '$gretingtitle\n', // The \n moves the subtitle to the next line naturally
+                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold, // Makes the title bold
+                      height: 0.6, // Tightly packs the line
+                    ),
+                  ),
+                  TextSpan(
+                    text: '$sub',
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      fontSize: 13, // Slightly smaller size
+                      fontWeight: FontWeight.bold, // Not bold
+                      //height: 1.1, // Controls the exact distance from the title
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
         actions: [

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ledgerly/pages/welcomepage.dart';
-
 void main(){
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
@@ -59,6 +58,8 @@ class _MyAppState extends State<MyApp> {
           titleLarge:GoogleFonts.openSans(color: Colors.black,fontSize: (screenWidth * 0.044).roundToDouble().clamp(15, 22),fontWeight: FontWeight.w500) ,
           titleMedium: GoogleFonts.openSans(color: Colors.orange.shade300, fontSize: (screenWidth * 0.033).clamp(12, 18)) ,
           titleSmall: GoogleFonts.openSans(color: Colors.green, fontSize: (screenWidth * 0.038).clamp(14, 20)) ,
+          labelMedium: GoogleFonts.openSans(color: Colors.black,fontSize: (screenWidth * 0.051).clamp(18, 26),fontWeight: FontWeight.bold),
+          labelSmall: GoogleFonts.openSans(color: Colors.grey,fontSize: (screenWidth * 0.030).clamp(11, 16)),
         ),
 
         iconTheme: IconThemeData(color: Colors.black),

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ledgerly/Model/expense_model.dart';
-
 class ExpenseItem extends StatelessWidget{
    const ExpenseItem({super.key, required this.expense});
   final expense_model expense;
