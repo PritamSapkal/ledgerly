@@ -192,8 +192,8 @@ class _HomepgaeState extends State<Homepgae> {
       ),
 
 
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      /*bottomNavigationBar: BottomAppBar(
         height: (screenHeight * 0.083).clamp(60.0, 90.0),
         shape: CircularNotchedRectangle(),
         notchMargin: 8.0,
@@ -213,7 +213,7 @@ class _HomepgaeState extends State<Homepgae> {
             ),*/
           ],
         ),
-      ),
+      ),*/
     );
   }
 }
