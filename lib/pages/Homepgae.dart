@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:ledgerly/chart/charts.dart';
 import 'package:ledgerly/main.dart';
+import 'package:lottie/lottie.dart';
 import '../ExpenseList/Expense_List.dart';
 import '../Model/expense_model.dart';
 import 'Add_new_expense.dart';
@@ -14,28 +16,31 @@ class Homepgae extends StatefulWidget{
 }
 
 class _HomepgaeState extends State<Homepgae> {
+
+
   final List<expense_model> _registredexpenses=[];
   String? gretingtitle;
   String? sub;
 
+
   void gretingtitlefn() {
-    int hour = DateTime.now().hour;
+    final int hour = DateTime.now().hour;
 
     if (hour >= 6 && hour < 12) {
-      gretingtitle = 'Good Morning.! \n';
-      sub = 'Track your expenses.!';
+      gretingtitle = 'Good Morning! 🌅';
+      sub = 'Track your morning spending.';
     }
     else if (hour >= 12 && hour < 17) {
-      gretingtitle = 'Good Afternoon.!\n';
-      sub = 'Keep tracking your expenses throughout the day';
+      gretingtitle = 'Good Afternoon! ☀️';
+      sub = 'Managing your day\'s budget?';
     }
     else if (hour >= 17 && hour < 19) {
-      gretingtitle = 'Good Evening.!\n';
-      sub = 'Review your spending and stay on track';
+      gretingtitle = 'Good Evening! 🌤️';
+      sub = 'Review your daily balance.';
     }
     else {
-      gretingtitle = 'Welcome back!\n';
-      sub = 'Check your daily expenses and plan for tomorrow';
+      gretingtitle = 'Welcome back! 🌙';
+      sub = 'Plan your tomorrow today.';
     }
   }
   @override
@@ -87,10 +92,10 @@ class _HomepgaeState extends State<Homepgae> {
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(0,15,0,5),
-            child: Image.asset("lib/images/rabit-removebg-preview.png", height: screenHeight * 0.20, fit: BoxFit.contain,),
+            child: Lottie.asset("lib/images/cycle_coin.json", height: screenHeight * 0.09, fit: BoxFit.contain,frameRate: FrameRate(3000),repeat:true),
           ),
 
-          Text('No expense Found start Adding some..!',style: Theme.of(context).textTheme.headlineSmall!.copyWith(fontSize: (screnWidth * 0.038).roundToDouble().clamp(14, 20)),),
+          Text('Your expense list is empty. Tap + to add one!',style: Theme.of(context).textTheme.headlineSmall!.copyWith(fontSize: (screnWidth * 0.038).roundToDouble().clamp(14, 20)),),
         ],
       )),
     );
@@ -121,13 +126,14 @@ class _HomepgaeState extends State<Homepgae> {
               TextSpan(
                 children: [
                   TextSpan(
-                    text: '$gretingtitle\n', // The \n moves the subtitle to the next line naturally
+                    text: '$gretingtitle\n\n', // The \n moves the subtitle to the next line naturally
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       fontSize: 18,
                       fontWeight: FontWeight.bold, // Makes the title bold
                       height: 0.6, // Tightly packs the line
                     ),
                   ),
+
                   TextSpan(
                     text: '$sub',
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(

@@ -93,7 +93,7 @@ class _AddNewExpenseState extends State<AddNewExpense> {
             ),
             LedgerlyTextField(
               controller:amount,
-              icon: Icons.attach_money_outlined ,
+              icon: Icons.currency_rupee_outlined ,
               keyboardType: TextInputType.numberWithOptions(),
               title: 'Enter Amount',maxlenth: 10,styleoftitle:Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: (screenwidth * 0.033).roundToDouble().clamp(12, 18)) ,
               styleoftext: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: (screenwidth * 0.046).roundToDouble().clamp(16, 24)),),
