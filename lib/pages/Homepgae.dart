@@ -27,19 +27,19 @@ class _HomepgaeState extends State<Homepgae> {
     final int hour = DateTime.now().hour;
 
     if (hour >= 6 && hour < 12) {
-      gretingtitle = 'Good Morning! 🌅';
+      gretingtitle = 'Good Morning!';
       sub = 'Track your morning spending.';
     }
     else if (hour >= 12 && hour < 17) {
-      gretingtitle = 'Good Afternoon! ☀️';
+      gretingtitle = 'Good Afternoon! ';
       sub = 'Managing your day\'s budget?';
     }
     else if (hour >= 17 && hour < 19) {
-      gretingtitle = 'Good Evening! 🌤️';
+      gretingtitle = 'Good Evening! ';
       sub = 'Review your daily balance.';
     }
     else {
-      gretingtitle = 'Welcome back! 🌙';
+      gretingtitle = 'Welcome back!';
       sub = 'Plan your tomorrow today.';
     }
   }
