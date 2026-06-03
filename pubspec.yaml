@@ -32,6 +32,8 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   build_runner: ^2.15.0
   hive_ce_generator: ^1.11.2
+  flutter_launcher_icons: ^0.14.4
+
 flutter:
 
 
@@ -42,6 +44,8 @@ flutter:
     - lib/images/rabit-removebg-preview.png
     - lib/images/coin_reveal.json
     - lib/images/cycle_coin.json
+    - lib/images/Ledgerly_logo.png
+    - lib/images/Ledgerly_logo_updated.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -69,3 +73,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "lib/images/Ledgerly_logo_updated.png"
+  adaptive_icon_background: "#000000"
+  adaptive_icon_foreground: "lib/images/Ledgerly_logo_updated.png"
