@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 import 'package:intl/intl.dart';
+import 'package:hive_ce/hive_ce.dart';
+
+part 'expense_model.g.dart';
 
 const uuid = Uuid();
 
+@HiveType(typeId: 2)
 enum Category {
-  food,
-  leisure,
-  travel,
-  movie,
-  shopping,
-  bills,
-  groceries,
-  health,
-  education,
-  other,
+  @HiveField(0) food,
+  @HiveField(1) leisure,
+  @HiveField(2) travel,
+  @HiveField(3) movie,
+  @HiveField(4) shopping,
+  @HiveField(5) bills,
+  @HiveField(6) groceries,
+  @HiveField(7) health,
+  @HiveField(8) education,
+  @HiveField(9) other,
 }
 
 const categoryIcons = {
@@ -30,18 +34,30 @@ const categoryIcons = {
   Category.other: Icons.miscellaneous_services_rounded,
 };
 
-class expense_model {
+// Also, standard Dart naming convention suggests using CamelCase for class names (ExpenseModel)
+@HiveType(typeId: 1) // Assign a unique type ID for the class
+class expense_model extends HiveObject { // Extending HiveObject gives you easy .delete() options
   expense_model({
     required this.title,
     required this.amount,
     required this.date,
     required this.category,
-  }) : id = uuid.v4();
+    String? id,
+  }) : id = id ?? uuid.v4();
 
+  @HiveField(0)
   final String id;
+
+  @HiveField(1)
   final String title;
+
+  @HiveField(2)
   final double amount;
+
+  @HiveField(3)
   final DateTime date;
+
+  @HiveField(4)
   final Category category;
 
   String get formattedDate {
