@@ -28,15 +28,15 @@ Ledgerly represents a major step forward in mastering advanced mobile developmen
 <h2>🖼️ Application Showcase</h2>
 
 <p align="center">
-  <img src="Screenshots/Loading_Page.png" width="24%" alt="Launcher Icon Screen" />
-  <img src="Screenshots/Empty_Homepage.png" width="24%" alt="Splash Screen" />
-  <img src="Screenshots/img_homescren.png" width="24%" alt="Empty Dashboard" />
+  <img src="Screenshots/Loading_Page.png" width="31%" alt="Splash Screen" />
+  <img src="Screenshots/Empty_Homepage.png" width="31%" alt="Empty Dashboard State" />
+  <img src="Screenshots/img_homescren.png" width="31%" alt="Active Expense Feed and Analytics" />
 </p>
 
 <p align="center">
-  <img src="Screenshots/Add_expensePage.png" width="24%" alt="Active Feed" />
-  <img src="Screenshots/delete_expense.png" width="32%" alt="Add Expense Panel" />
-  <img src="Screenshots/inavaliddata_message.png" width="32%" alt="Swipe Action dismissible" />
+  <img src="Screenshots/Add_expensePage.png" width="31%" alt="Add Expense Sheet Panel" />
+  <img src="Screenshots/delete_expense.png" width="31%" alt="Swipe Action Dismissible Delete" />
+  <img src="Screenshots/inavaliddata_message.png" width="31%" alt="Validation Data Handling Dialog" />
 </p>
 
 <hr>
