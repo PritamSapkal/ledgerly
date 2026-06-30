@@ -15,7 +15,7 @@ class AddNewExpense extends StatefulWidget{
 class _AddNewExpenseState extends State<AddNewExpense> {
   var title= TextEditingController();
   var amount= TextEditingController();
-  DateTime ? selecteddate=null;
+  DateTime ? selecteddate=DateTime(DateTime.now().year,DateTime.now().month,DateTime.now().day,);
   var selectedcategory = Category.food;
 
   @override
@@ -62,11 +62,13 @@ class _AddNewExpenseState extends State<AddNewExpense> {
     }
 
 
-    return Container(
+    return
+      Container(
       width: screenwidth,
       height: screenheight,
       color: Theme.of(context).primaryColor,
       child: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -220,7 +222,7 @@ class _AddNewExpenseState extends State<AddNewExpense> {
           ],
         ),
       ),
-    );
+          );
   }
 }
 

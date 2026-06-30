@@ -16,7 +16,7 @@ class _welcomepageState extends State<welcomepage> {
    @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 4), (){
+    Timer(Duration(seconds: 2), (){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Homepgae(AppTheme: widget.apptheme,)) );
     });
   }
