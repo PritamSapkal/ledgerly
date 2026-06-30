@@ -16,7 +16,6 @@ Ledgerly is a premium, high-performance personal finance management and expense 
 </p>
 
 <hr>
-
 <h2>📌 About the Application</h2>
 
 <p>
