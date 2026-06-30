@@ -43,6 +43,7 @@ Ledgerly represents a major step forward in mastering advanced mobile developmen
 
 <h2>✨ Core Engineering Features</h2>
 
+
 <ul>
   <li>🔒 <b>100% Offline Architecture:</b> Requires zero network access permissions, completely eliminating cloud-leak risks or external server dependencies.</li>
   <li>⚡ <b>High-Speed Data Persistence:</b> Integrated with <b>Hive CE (Community Edition)</b> utilizing custom-generated binary TypeAdapters for immediate read/write cycles and synchronized data transactions.</li>
